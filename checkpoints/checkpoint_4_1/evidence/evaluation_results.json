@@ -1,0 +1,863 @@
+{
+  "timestamp": "2026-09-17T00:48:45",
+  "corpus_pdfs": 153,
+  "corpus_pages": 6105,
+  "final_k": 5,
+  "cases": [
+    {
+      "question": "What role does the programmer play in the sketching approach to program synthesis?",
+      "grading_notes": "Explains that the programmer supplies a partial program or sketch that constrains the implementation, while the synthesizer fills in the missing details or holes.",
+      "subqueries": [
+        "programmer role sketching approach to program synthesis",
+        "sketching approach program synthesis programmer responsibilities constraints holes",
+        "program synthesis sketching programmer interaction partial programs"
+      ],
+      "modes": {
+        "baseline": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_135",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 135,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_iclr_OlaussonIW0S24_page_9",
+              "paper": "DBLP_conf_iclr_OlaussonIW0S24.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_150",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 150,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "In the sketching approach, the programmer provides a sketch that constrains the shape of the synthesized program, rather than writing the full implementation. The paper says that “a complete sketch is a StreamIt program P” and that this program “serves as a sketch” so that when decomposition reaches a matching leaf filter, “the filter is not decomposed using the base rewrite rules; instead, it is replaced with the program P” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\nThe programmer’s role is thus to control the compiler only where the base algorithm would make a poor transformation: “the programmer will control the compiler (with a sketch) only when its base algorithm would make a poor decoposition transformation” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\nThe paper also says the programmer may write a simpler “proper sketch” that omits details, and the compiler then resolves those missing details automatically [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s substantive claims about the programmer’s role in sketching are supported by the cited page: sketches constrain the shape of the decomposed program, the programmer controls the compiler only where the base algorithm would be poor, and proper sketches may omit details that the compiler resolves. The citations match the named paper’s own page."
+          }
+        },
+        "decomposition": {
+          "hits": [
+            {
+              "id": "DBLP_conf_aplas_Solar-Lezama09_page_1",
+              "paper": "DBLP_conf_aplas_Solar-Lezama09.pdf",
+              "pdf_position": 1,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_829",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 829,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_aplas_Solar-Lezama09_page_2",
+              "paper": "DBLP_conf_aplas_Solar-Lezama09.pdf",
+              "pdf_position": 2,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 10.0
+            }
+          ],
+          "answer": "In sketching, the programmer provides the high-level structure of the solution by writing a **partial program** or “sketch” that “encodes the structure of a solution while leaving its low-level details unspecified” [DBLP_conf_aplas_Solar-Lezama09_page_1]. The programmer also supplies a **specification** for correctness, either as “a reference implementation or a set of test routines” [DBLP_conf_aplas_Solar-Lezama09_page_1]. More specifically, the paper says the programmer “express[es] [their] high-level insights about a problem by writing a sketch” and that this lets them “construe the sketch as a constraint on the shape of the decomposed program” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\nSo, the programmer’s role is to provide the **intent, structure, and correctness criteria**, while the synthesizer fills in the missing low-level details [DBLP_conf_aplas_Solar-Lezama09_page_1].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        },
+        "graph": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_135",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 135,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_iclr_OlaussonIW0S24_page_9",
+              "paper": "DBLP_conf_iclr_OlaussonIW0S24.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_843",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 843,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "In the sketching approach, the programmer provides a **sketch** rather than a full implementation. The sketch acts as a constraint on the shape of the program, and the compiler fills in the missing details. As the paper explains, “the programmer actually writes the simpler proper sketch,” while the “sketching compiler” then resolves it into a complete program [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\nMore specifically, the programmer can also supply a **complete sketch** or a higher-level program shape, and the compiler uses it to guide decomposition: “a complete sketch is a StreamIt program P that implements some permutation f,” and “when the decomposition encounters a leaf ﬁlter with a permutation f, the ﬁlter is not decomposed using the base rewrite rules; instead, it is replaced with the program P” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\nSo, the programmer’s role is to **specify the intended structure or constraints**, while synthesis handles the detailed implementation [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s core claim matches the cited page: the programmer provides a sketch or higher-level structure, and the sketching compiler fills in missing details. The cited page explicitly says the programmer writes a proper sketch, that complete sketches can be written manually, and that the sketch is a constraint on the shape of the decomposed program."
+          }
+        },
+        "both": {
+          "hits": [
+            {
+              "id": "DBLP_conf_aplas_Solar-Lezama09_page_1",
+              "paper": "DBLP_conf_aplas_Solar-Lezama09.pdf",
+              "pdf_position": 1,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_829",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 829,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_843",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 843,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "In sketching, the programmer provides the high-level structure of the solution by writing a “sketch,” which is “a partial program that encodes the structure of a solution while leaving its low-level details unspecified” [DBLP_conf_aplas_Solar-Lezama09_page_1]. The programmer also supplies either “a reference implementation or a set of test routines that the synthesized code must pass,” and the synthesizer fills in the missing details [DBLP_conf_aplas_Solar-Lezama09_page_1].\n\nSo, the programmer’s role is to express insight and constraints about the desired implementation, while leaving the low-level implementation choices to the automated synthesis engine [DBLP_conf_aplas_Solar-Lezama09_page_1].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s claims are supported by the cited page: it says programmers write partial programs/sketches to express high-level insights while leaving low-level details to automated synthesis, and they provide either a reference implementation or test routines."
+          }
+        }
+      }
+    },
+    {
+      "question": "What is program synthesis, and how does the sketching approach change how a program is created?",
+      "grading_notes": "Defines program synthesis as automatically producing a program from a specification or constraints, and explains that sketching lets a programmer provide a partial template that the synthesizer completes.",
+      "subqueries": [
+        "program synthesis definition automated program generation from specifications",
+        "sketching approach in program synthesis how sketches and holes create programs",
+        "compare sketching approach vs traditional program creation in program synthesis"
+      ],
+      "modes": {
+        "baseline": {
+          "hits": [
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 12.0
+            },
+            {
+              "id": "DBLP_conf_cikm_CheungSM12_page_5",
+              "paper": "DBLP_conf_cikm_CheungSM12.pdf",
+              "pdf_position": 5,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_2",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 2,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1208-2925_page_5",
+              "paper": "DBLP_journals_corr_abs-1208-2925.pdf",
+              "pdf_position": 5,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1802-04408_page_4",
+              "paper": "DBLP_journals_corr_abs-1802-04408.pdf",
+              "pdf_position": 4,
+              "keyword_score": 11.0
+            }
+          ],
+          "answer": "Program synthesis is the process of automatically generating a program that satisfies a given specification or constraints. In the ReaS paper, for example, the synthesis problem is stated as: “find σ such that ∀k. J Bk Kσ = 1” for an asserted program specification ([DBLP_journals_corr_abs-1802-04408_page_4]).  \n\nIn the sketching approach, the programmer does not write the full implementation. Instead, they provide a “sketch,” described as “a loosely constrained template of the implementation, with the compiler filling in the missing details” ([DBLP_conf_pldi_Solar-LezamaRBE05_page_2]). The paper says that a complete sketch is “a StreamIt program P that implements some permutation f,” and the compiler uses it as a rewrite rule: when it encounters the matching leaf filter, “the ﬁlter is not decomposed using the base rewrite rules; instead, it is replaced with the program P” ([DBLP_conf_pldi_Solar-LezamaRBE05_page_8]).  \n\nSo, compared with writing a full program manually, sketching changes program creation by letting the programmer specify the overall structure or strategy while the synthesis/compiler automatically fills in the missing low-level details and ensures correctness ([DBLP_conf_pldi_Solar-LezamaRBE05_page_2], [DBLP_conf_pldi_Solar-LezamaRBE05_page_8]).",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s claims about synthesis and sketching are supported by the cited pages: the ReaS paper defines the synthesis problem as finding a satisfying assignment for asserted constraints, and the StreamBit paper says sketching provides a loosely constrained template whose missing details are filled in by the compiler, with the resolved sketch replacing a matching leaf filter and guaranteeing correctness by construction. [DBLP_journals_corr_abs-1802-04408_page_4] [DBLP_conf_pldi_Solar-LezamaRBE05_page_2] [DBLP_conf_pldi_Solar-LezamaRBE05_page_8]"
+          }
+        },
+        "decomposition": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_847",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 847,
+              "keyword_score": 6.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_829",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 829,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_875",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 875,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_aplas_Solar-Lezama09_page_1",
+              "paper": "DBLP_conf_aplas_Solar-Lezama09.pdf",
+              "pdf_position": 1,
+              "keyword_score": 8.0
+            }
+          ],
+          "answer": "Program synthesis is the automatic creation of a program that satisfies a given specification. In the provided documents, sketching is described as “a new form of localized software synthesis” where “the programmer uses partial programs to describe the desired implementation strategy, and leaves the low-level details of the implementation to an automated synthesis procedure” [DBLP_conf_aplas_Solar-Lezama09_page_1].\n\nSo, the sketching approach changes program creation by shifting part of the work from manual coding to synthesis: the programmer writes a **sketch** or **partial program** that captures the high-level structure, and the synthesizer fills in the missing details. The document says that programmers provide “either a reference implementation or a set of test routines that the synthesized code must pass,” and the engine “is able to derive the missing details in the sketch to produce a working implementation” [DBLP_conf_aplas_Solar-Lezama09_page_1].\n\nIn short: instead of writing a complete program from scratch, the programmer writes a structured outline and lets synthesis complete it [DBLP_conf_aplas_Solar-Lezama09_page_1].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s claims are supported by the cited source page, and no unsupported factual claims are present."
+          }
+        },
+        "graph": {
+          "hits": [
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 12.0
+            },
+            {
+              "id": "DBLP_conf_cikm_CheungSM12_page_5",
+              "paper": "DBLP_conf_cikm_CheungSM12.pdf",
+              "pdf_position": 5,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_2",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 2,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_cikm_CheungSM12_page_2",
+              "paper": "DBLP_conf_cikm_CheungSM12.pdf",
+              "pdf_position": 2,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_9",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 9,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The documents describe **program synthesis** as automatically deriving a program or implementation from a specification or data.\n\n- In the LifeJoin paper, the authors say they use “**program synthesis**” to “**infer a program from a set of sample behaviors**” in programming-by-example systems, and in their own approach “**a program synthesizer is able to generate a classiﬁer**” from training data, though it “**does not provide any generalization guarantees**” by itself [DBLP_conf_cikm_CheungSM12_page_2] [DBLP_conf_cikm_CheungSM12_page_5].\n- In the StreamBit paper, synthesis is described as compiling a full behavioral specification into low-level code: “**When programming with StreamBit, the programmer ﬁrst writes a full behavioral speciﬁcation of the desired bit manipulation task**,” and the compiler then produces “**low-level C code**” [DBLP_conf_pldi_Solar-LezamaRBE05_page_2].\n\nThe **sketching** approach changes program creation by letting the programmer provide only a partial template, while the compiler fills in the missing details:\n\n- StreamBit says sketching provides “**only a loosely constrained template of the implementation, with the compiler ﬁlling in the missing details**” [DBLP_conf_pldi_Solar-LezamaRBE05_page_2].\n- The sketching compiler “**synthesizes an implementation that is functionally identical to the reference program while being structurally conformant to the sketched implementation**” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n- A complete sketch is “**a StreamIt program P that implements some permutation f**,” and the compiler replaces a leaf filter with the sketch’s AST instead of using the base rewrite rules [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n- For proper sketches, missing details are resolved by “**determinization**,” meaning the compiler selects an execution of the nondeterministic sketch that computes the desired function [DBLP_conf_pldi_Solar-LezamaRBE05_page_9].\n\nSo, in short: **program synthesis automatically constructs a program from specifications or examples, while sketching lets the programmer supply a partial program shape and have the compiler synthesize the missing parts** [DBLP_conf_cikm_CheungSM12_page_2] [DBLP_conf_pldi_Solar-LezamaRBE05_page_2] [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "The answer includes multiple uncited factual claims, and some citations do not support the exact claims made. In particular, several statements about program synthesis and sketching are not directly supported by the cited pages, and the quoted wording about sketching/resolution is partly paraphrased as if exact. The response therefore does not meet the source-support requirement."
+          }
+        },
+        "both": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_847",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 847,
+              "keyword_score": 6.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_829",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 829,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 12.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_2",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 2,
+              "keyword_score": 11.0
+            }
+          ],
+          "answer": "The documents do not define **program synthesis** in general, but they do describe it as a process where a solver derives a complete implementation from a specification or sketch. For example, Sketcham says it “converts dedup, sort, and a harness into a single SAT formula and then uses CEGIS to find a solution” and that it “creates a new synthesis problem” by using mock versions of functions [DBLP_conf_cav_BraggFRS21_page_829]. More generally, the StreamBit paper says the compiler “uses the reference program and the sketch to derive a complete (and optimized) implementation” [DBLP_conf_pldi_Solar-LezamaRBE05_page_2].\n\nThe sketching approach changes program creation by letting the programmer write only a partial, high-level template and leaving the missing details to the compiler/solver. The StreamBit paper says, “the programmer or a performance expert sketches an efficient implementation,” and that “the compiler [fills] in the missing details” [DBLP_conf_pldi_Solar-LezamaRBE05_page_2]. It also says the sketch is “a loosely constrained template of the implementation” and that “the details are obtained by ensuring that when the sketch is resolved, it implements the reference program” [DBLP_conf_pldi_Solar-LezamaRBE05_page_2]. Likewise, Sketcham says it “frees the Sketch user from needing to write models, because we create mocks automatically from normal sketches” [DBLP_conf_cav_BraggFRS21_page_845].\n\nIn short, sketching shifts program creation from writing the full low-level code to writing a partial design, with synthesis filling in the rest automatically [DBLP_conf_pldi_Solar-LezamaRBE05_page_2].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        }
+      }
+    },
+    {
+      "question": "How do The Sketching Approach to Program Synthesis and Learning to Infer Program Sketches differ in how program sketches are produced?",
+      "grading_notes": "States that the sketching approach uses a human-written sketch, while Learning to Infer Program Sketches uses a learned neural sketch generator to produce sketches from specifications before symbolic search.",
+      "subqueries": [
+        "\"The Sketching Approach to Program Synthesis\" program sketches produced how",
+        "\"Learning to Infer Program Sketches\" program sketches produced how",
+        "comparison of how program sketches are produced in The Sketching Approach to Program Synthesis and Learning to Infer Program Sketches"
+      ],
+      "modes": {
+        "baseline": {
+          "hits": [
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_2",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_3",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 3,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisRST18_page_9",
+              "paper": "DBLP_conf_nips_EllisRST18.pdf",
+              "pdf_position": 9,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisST15_page_2",
+              "paper": "DBLP_conf_nips_EllisST15.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 13.0
+            }
+          ],
+          "answer": "They differ in **who/what produces the sketches and whether that process is learned or manually provided**.\n\n- In **The Sketching Approach to Program Synthesis**, sketches are **manually provided by the programmer**: “*In the sketching approach to program synthesis, one manually provides a sketch of the program to be induced*” and sketches are used to specify “*a rough outline of its structure*” [DBLP_conf_nips_EllisST15_page_2].  \n- In **Learning to Infer Program Sketches**, sketches are **generated by a learned neural model**: the system has a “*sketch generator*” that is “*a distribution over program sketches given the spec*” and is “*parametrized by a recurrent neural network*” [DBLP_conf_icml_NyeHTS19_page_3]. The paper also says the approach “*allows this division of labor to be learned, without additional supervision*” [DBLP_conf_icml_NyeHTS19_page_3].\n\nSo, the key difference is: **manual sketching versus learned sketch generation from specifications** [DBLP_conf_nips_EllisST15_page_2] [DBLP_conf_icml_NyeHTS19_page_3].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "No direct citation to named paper(s): ['the sketching approach to program synthesis']"
+          }
+        },
+        "decomposition": {
+          "hits": [
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_1",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 1,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisRST18_page_9",
+              "paper": "DBLP_conf_nips_EllisRST18.pdf",
+              "pdf_position": 9,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisST15_page_2",
+              "paper": "DBLP_conf_nips_EllisST15.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_876",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 876,
+              "keyword_score": 12.0
+            }
+          ],
+          "answer": "They differ in **who produces the sketch and how much is specified**.\n\n- In **The Sketching Approach to Program Synthesis**, the sketch is **manually provided by the programmer**: “*one manually provides a sketch of the program to be induced*,” and the sketches “*take the form of a probabilistic context-free grammar*” [DBLP_conf_nips_EllisST15_page_2].\n- In **Learning to Infer Program Sketches**, the system is designed to **infer sketches automatically** from specifications like examples or natural language: “*Our goal is to build systems which write code automatically from the kinds of specifications humans can most easily provide, such as examples and natural language instruction*,” and it “*learn[s] … when to rely on pattern recognition and when to perform symbolic search*” [DBLP_conf_icml_NyeHTS19_page_1].\n\nSo, one paper uses **human-written sketches as input** [DBLP_conf_nips_EllisST15_page_2], while the other aims to **learn or infer sketches automatically** from examples/instructions [DBLP_conf_icml_NyeHTS19_page_1].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        },
+        "graph": {
+          "hits": [
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_2",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_3",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 3,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisRST18_page_9",
+              "paper": "DBLP_conf_nips_EllisRST18.pdf",
+              "pdf_position": 9,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisST15_page_2",
+              "paper": "DBLP_conf_nips_EllisST15.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            }
+          ],
+          "answer": "The two papers differ in **who/what produces the sketch**:\n\n- In **The Sketching Approach to Program Synthesis**, the sketch is **manually provided by the programmer**: “*one manually provides a sketch of the program to be induced*” [DBLP_conf_nips_EllisST15_page_2]. The sketch is a prior, expressed as a grammar over programs [DBLP_conf_nips_EllisST15_page_2].\n- In **Learning to Infer Program Sketches**, the sketch is **learned by a neural network**: the system has “*a learned neural sketch generator*” and “*a novel self-supervised training objective*,” allowing it to “*learn a suitable intermediate sketch representation*” without explicit supervision [DBLP_conf_icml_NyeHTS19_page_2]. More specifically, it learns a distribution over sketches conditioned on the spec, \\(q_\\phi(\\text{sketch}\\mid X)\\) [DBLP_conf_icml_NyeHTS19_page_3].\n\nSo, one uses **human-authored sketches**, while the other **infers sketches automatically from specifications** [DBLP_conf_nips_EllisST15_page_2] [DBLP_conf_icml_NyeHTS19_page_2].",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "No direct citation to named paper(s): ['the sketching approach to program synthesis']"
+          }
+        },
+        "both": {
+          "hits": [
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_1",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 1,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisRST18_page_9",
+              "paper": "DBLP_conf_nips_EllisRST18.pdf",
+              "pdf_position": 9,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_2",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 2,
+              "keyword_score": 13.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_3",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 3,
+              "keyword_score": 13.0
+            }
+          ],
+          "answer": "They differ in **who produces the sketch and how fixed that process is**.\n\n- In **The Sketching Approach to Program Synthesis**, sketches are not generated by a learned model. Instead, sketches are **programs/rules supplied by the programmer** and used as rewrite rules: “a complete sketch is a StreamIt program P … this program serves as a sketch” and the compiler replaces a matching leaf with the AST of that program ([DBLP_conf_pldi_Solar-LezamaRBE05_page_8]). The paper also says sketches can be “develop[ed] … manually,” though complete sketches may also be resolved from proper sketches ([DBLP_conf_pldi_Solar-LezamaRBE05_page_8]).\n\n- In **Learning to Infer Program Sketches**, sketches are **produced by a learned neural sketch generator**. The paper defines a sketch as “a valid program tree in the DSL, where any number of subtrees has been replaced by a special token: `<HOLE>`,” and says the system has “a sketch generator” that is “parametrized by a recurrent neural network” and outputs a distribution over sketches given the spec ([DBLP_conf_icml_NyeHTS19_page_3]). It explicitly says the approach “allows this division of labor to be learned, without additional supervision” ([DBLP_conf_icml_NyeHTS19_page_3]).\n\nSo, in short: **Solar-Lezama’s sketching uses programmer-authored rewrite-rule sketches in the compiler, while Nye et al. learn sketches automatically with a neural generator that inserts `<HOLE>`s and is trained from data** ([DBLP_conf_pldi_Solar-LezamaRBE05_page_8], [DBLP_conf_icml_NyeHTS19_page_3]).",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        }
+      }
+    },
+    {
+      "question": "Which method lets a developer provide an incomplete program that an automated system completes under constraints?",
+      "grading_notes": "Identifies sketch-based program synthesis and explains that a partial program or sketch contains missing parts that are completed subject to a specification or constraints.",
+      "subqueries": [
+        "method incomplete program automated system completes under constraints",
+        "program synthesis from partial program constraints developer provides incomplete program",
+        "sketching incomplete program automated completion constraint solving"
+      ],
+      "modes": {
+        "baseline": {
+          "hits": [
+            {
+              "id": "DBLP_conf_oopsla_PuNSB16_page_11",
+              "paper": "DBLP_conf_oopsla_PuNSB16.pdf",
+              "pdf_position": 11,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_journals_corr_PuNSB16_page_11",
+              "paper": "DBLP_journals_corr_PuNSB16.pdf",
+              "pdf_position": 11,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_plas_AustinYFS13_page_9",
+              "paper": "DBLP_conf_plas_AustinYFS13.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_sigsoft_JeonQFS15_page_1",
+              "paper": "DBLP_conf_sigsoft_JeonQFS15.pdf",
+              "pdf_position": 1,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_tacas_InalaPQLS17_page_113",
+              "paper": "DBLP_conf_tacas_InalaPQLS17.pdf",
+              "pdf_position": 113,
+              "keyword_score": 10.0
+            }
+          ],
+          "answer": "The method is **sketch-based synthesis**. The JSKETCH paper says it “lets developers synthesize software starting from a **partial program**,” and that JSKETCH’s input is “a **partial Java program** that may include holes,” which are then synthesized into a complete program under the given harness/assertion constraints ([DBLP_conf_sigsoft_JeonQFS15_page_1]).",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer is supported by the cited JSKETCH page: it describes sketch-based synthesis as starting from a partial program and says JSKETCH takes a partial Java program with holes, which is then synthesized under constraints."
+          }
+        },
+        "decomposition": {
+          "hits": [
+            {
+              "id": "DBLP_conf_oopsla_PuNSB16_page_11",
+              "paper": "DBLP_conf_oopsla_PuNSB16.pdf",
+              "pdf_position": 11,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_870",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 870,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_sigsoft_SinghS11_page_11",
+              "paper": "DBLP_conf_sigsoft_SinghS11.pdf",
+              "pdf_position": 11,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1204-1751_page_1",
+              "paper": "DBLP_journals_corr_abs-1204-1751.pdf",
+              "pdf_position": 1,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_conf_nips_EllisRST18_page_9",
+              "paper": "DBLP_conf_nips_EllisRST18.pdf",
+              "pdf_position": 9,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The document says that in code completion, “**The user leaves holes in the program for the system to complete**,” and “**a language model is used to suggest possible method calls to put in these holes**,” with suggestions “**constraint by the semantic context of the hole**” [DBLP_conf_oopsla_PuNSB16_page_11].\n\nSo the method is **code completion** [DBLP_conf_oopsla_PuNSB16_page_11].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The cited page supports that in code completion, the user leaves holes in the program for the system to complete under semantic constraints, which matches the answer's identification of code completion."
+          }
+        },
+        "graph": {
+          "hits": [
+            {
+              "id": "DBLP_conf_oopsla_PuNSB16_page_11",
+              "paper": "DBLP_conf_oopsla_PuNSB16.pdf",
+              "pdf_position": 11,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_plas_AustinYFS13_page_9",
+              "paper": "DBLP_conf_plas_AustinYFS13.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_sigsoft_JeonQFS15_page_1",
+              "paper": "DBLP_conf_sigsoft_JeonQFS15.pdf",
+              "pdf_position": 1,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1204-1751_page_1",
+              "paper": "DBLP_journals_corr_abs-1204-1751.pdf",
+              "pdf_position": 1,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1204-1751_page_8",
+              "paper": "DBLP_journals_corr_abs-1204-1751.pdf",
+              "pdf_position": 8,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The method is **sketch-based synthesis**: developers provide “a partial program, also called a sketch or template,” and the system synthesizes the rest under constraints ([DBLP_conf_sigsoft_JeonQFS15_page_1]). The document also says JSKETCH’s input is “a partial Java program that may include holes… expression generators… and class generators,” which it then translates into a synthesis problem ([DBLP_conf_sigsoft_JeonQFS15_page_1]).",
+          "verdict": "pass",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The cited page explicitly states that sketch-based synthesis lets developers synthesize software from a partial program or sketch/template under constraints."
+          }
+        },
+        "both": {
+          "hits": [
+            {
+              "id": "DBLP_conf_oopsla_PuNSB16_page_11",
+              "paper": "DBLP_conf_oopsla_PuNSB16.pdf",
+              "pdf_position": 11,
+              "keyword_score": 11.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_870",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 870,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_sigsoft_SinghS11_page_11",
+              "paper": "DBLP_conf_sigsoft_SinghS11.pdf",
+              "pdf_position": 11,
+              "keyword_score": 8.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1204-1751_page_1",
+              "paper": "DBLP_journals_corr_abs-1204-1751.pdf",
+              "pdf_position": 1,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_journals_corr_abs-1204-1751_page_8",
+              "paper": "DBLP_journals_corr_abs-1204-1751.pdf",
+              "pdf_position": 8,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The documents say this is **code completion**: “the user leaves holes in the program for the system to complete,” and “a language model is used to suggest possible method calls to put in these holes” [DBLP_conf_oopsla_PuNSB16_page_11]. More generally, the feedback paper describes a synthesis-based approach where student programs are turned into sketches and the system “automatically derives minimal corrections” by “synthesizing a correct program from a sketch” [DBLP_journals_corr_abs-1204-1751_page_1].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer identifies code completion, and the cited page explicitly says the user leaves holes in the program for the system to complete, with suggestions constrained by semantic context. It also cites a second page about synthesis from sketches, which supports the sketch-completion framing."
+          }
+        }
+      }
+    },
+    {
+      "question": "What evidence do the papers provide about the benefits and limitations of automatically inferred program sketches?",
+      "grading_notes": "Uses evidence from Learning to Infer Program Sketches and includes at least one reported benefit, such as improved out-of-sample generalization or flexible neural-symbolic search, and at least one limitation or trade-off, such as dependence on training data, search budget, or task domain.",
+      "subqueries": [
+        "automatically inferred program sketches benefits limitations evidence papers",
+        "paper evidence automatically inferred program sketches advantages drawbacks evaluation",
+        "automatically inferred program sketches user study performance limitations research"
+      ],
+      "modes": {
+        "baseline": {
+          "hits": [
+            {
+              "id": "DBLP_conf_icml_GuJLSESS25_page_9",
+              "paper": "DBLP_conf_icml_GuJLSESS25.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_icml_TavaresK0DS21_page_1",
+              "paper": "DBLP_conf_icml_TavaresK0DS21.pdf",
+              "pdf_position": 1,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_icml_TavaresK0DS21_page_9",
+              "paper": "DBLP_conf_icml_TavaresK0DS21.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_820",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 820,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_conf_cikm_CheungSM12_page_2",
+              "paper": "DBLP_conf_cikm_CheungSM12.pdf",
+              "pdf_position": 2,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The provided documents do **not** discuss “automatically inferred program sketches” directly, so they do not give evidence specifically about that topic. What they *do* provide is adjacent evidence about automatically inferred / synthesized program-like representations:\n\n- In the LifeJoin paper, the authors say that synthesis can produce “more decomposable and human-understandable models” than traditional machine learning, and that the generated models are “comparable to the original intentions that the user has in her mind” [DBLP_conf_cikm_CheungSM12_page_2]. They also say such expressions “can be easily manipulated and decomposed” and “are also comprehensible by users” [DBLP_conf_cikm_CheungSM12_page_2].\n- The same paper also notes limitations: the naive search space is “enormous—on the order of 10^40,” and the synthesized predicates “cannot be expected to have much generalization power” and are “unlikely to correctly classify as yet unseen data items” [DBLP_conf_cikm_CheungSM12_page_2].\n- In the SynPlexity paper, the authors report that synthesis can solve many benchmarks efficiently, but that some benchmarks fail or time out, and that certain features are unsupported (e.g., ReSyn does not support non-linear resource bounds; Synquid cannot provide guarantees about resource usage) [DBLP_conf_cav_BraggFRS21_page_820].\n- None of the excerpts mention “program sketches” as such, nor do they explicitly evaluate the benefits or limitations of automatically inferred sketches [DBLP_conf_cikm_CheungSM12_page_2] [DBLP_conf_cav_BraggFRS21_page_820].\n\nIf you want, I can also answer the question **as if “program sketches” means synthesized predicates/program fragments** using only the evidence above.",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "pass",
+            "reason": "The answer’s substantive claims are supported by the cited pages: the LifeJoin paper page supports decomposability, human-understandability, and generalization limitations, and the SynPlexity page supports tool successes, failures, and unsupported features. The answer also correctly avoids claiming that the excerpts directly discuss automatically inferred program sketches."
+          }
+        },
+        "decomposition": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_822",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 822,
+              "keyword_score": 6.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_1",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 1,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_827",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 827,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_846",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 846,
+              "keyword_score": 7.0
+            }
+          ],
+          "answer": "The papers suggest several benefits of automatically inferred or generated sketch-related specifications, but also some clear limitations.\n\nBenefits:\n- Sketcham shows that turning tests into mocks/specifications can enable modular synthesis “without extra work from the user,” because it “automatically generat[es] mocks from harnesses” and lets callers and callees be reasoned about separately [DBLP_conf_cav_BraggFRS21_page_827].\n- Its evaluation found performance gains: “for six of ten benchmarks, Sketcham runs up to 5× faster than Sketch” [DBLP_conf_cav_BraggFRS21_page_827]. The conclusion also says this provided gains “of as much as 5×,” including “one benchmark that otherwise timed out on Sketch” [DBLP_conf_cav_BraggFRS21_page_846].\n- The PLDI sketching paper presents sketching more generally as improving productivity and robustness, saying a sketch is “easier to write compared to a complete implementation,” helps programmers focus on higher-level algorithmic properties, and a “sketch-aware compiler rejects ‘buggy’ sketches” [DBLP_conf_pldi_Solar-LezamaRBE05_page_1].\n\nLimitations:\n- Sketcham’s modularization is not automatic for arbitrary assertions: it imposes “limitations of the assertions—e.g., they can contain at most one function call—to guarantee we can always translate them from harness assertions to mock assertions” [DBLP_conf_cav_BraggFRS21_page_827].\n- The paper also notes that Sketch itself “does not specifically support modular synthesis,” and without manually replacing calls with models, “SAT formulas created by Sketch can grow quite quickly as function calls are inlined” [DBLP_conf_cav_BraggFRS21_page_827].\n- More broadly, the sketching approach in the PLDI paper is about partial implementations, not complete ones; the paper describes sketches as “a partial specification of the implementation” [DBLP_conf_pldi_Solar-LezamaRBE05_page_1]. That implies the technique relies on user-provided outlines rather than fully inferred programs.\n\nSo, the evidence is that automatically inferred sketches/mocks can improve modularity, reduce user effort, and sometimes improve performance, but they are constrained by the kinds of assertions/specifications they can infer and by the underlying synthesis framework’s scalability limits [DBLP_conf_cav_BraggFRS21_page_827][DBLP_conf_cav_BraggFRS21_page_846][DBLP_conf_pldi_Solar-LezamaRBE05_page_1].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        },
+        "graph": {
+          "hits": [
+            {
+              "id": "DBLP_conf_icml_GuJLSESS25_page_9",
+              "paper": "DBLP_conf_icml_GuJLSESS25.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_icml_TavaresK0DS21_page_1",
+              "paper": "DBLP_conf_icml_TavaresK0DS21.pdf",
+              "pdf_position": 1,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_icml_TavaresK0DS21_page_9",
+              "paper": "DBLP_conf_icml_TavaresK0DS21.pdf",
+              "pdf_position": 9,
+              "keyword_score": 10.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_1",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 1,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_8",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 8,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The papers give evidence that automatically inferred program sketches can be useful, but they also show clear limits.\n\n**Benefits**\n- The sketch-learning paper says the goal is to “build systems which write code automatically” from examples or natural language, and argues that “a ﬂexible combination of pattern recognition and explicit reasoning” can solve programming problems; its model “learns to find good intermediates between pattern recognition and symbolic reasoning components” and “outperforms existing models on several programming tasks” [DBLP_conf_icml_NyeHTS19_page_1].\n- It also gives concrete examples of how sketching helps by letting a programmer specify only part of a program, such as `filter(input, <HOLE>)`, while the rest is inferred [DBLP_conf_icml_NyeHTS19_page_1].\n- The sketching compiler paper explains that sketches let the compiler synthesize an implementation that is “functionally identical to the reference program while being structurally conformant to the sketched implementation” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8]. It also says sketches improve conciseness because “the base compiler will perform most of the decomposition,” and the programmer only controls the compiler when its default transformation would be poor [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n\n**Limitations**\n- The sketch-learning paper is about a dataset of “simple English description-to-code programming problems,” so the evidence there is on relatively limited tasks rather than general software engineering [DBLP_conf_icml_NyeHTS19_page_1].\n- The sketching compiler paper notes that its base algorithm is predictable but “will generally produce suboptimal results” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n- It also says sketching is not universally expressive: the approach is designed around specific implementation patterns, and the paper notes that some desired decompositions are “not expressible in our domain algebra” [DBLP_conf_pldi_Solar-LezamaRBE05_page_8].\n- More broadly, the software-engineering position paper says that for AI coding systems, “the majority of AI for code research today does not leverage the symbolic properties of code,” and that deeper integration with symbolic tools is needed to mitigate shortcomings such as “high computational cost” and “many false positives” in traditional program analysis tools [DBLP_conf_icml_GuJLSESS25_page_9].\n\nSo, the evidence is that automatic sketch inference can make code generation more flexible, concise, and effective, but current approaches remain limited to narrower task types, can produce suboptimal results, and do not yet cover all program forms or all software-engineering settings [DBLP_conf_icml_NyeHTS19_page_1] [DBLP_conf_pldi_Solar-LezamaRBE05_page_8] [DBLP_conf_icml_GuJLSESS25_page_9].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "The answer includes uncited substantive claims and overstates evidence beyond the supplied pages. In particular, the citation for the sketching compiler paper is to page 8, but claims about limitations of automatically inferred program sketches are partly attributed to a different paper on AI for software engineering rather than to the sketching papers themselves, and several claims are not directly supported by the cited text."
+          }
+        },
+        "both": {
+          "hits": [
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_845",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 845,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_822",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 822,
+              "keyword_score": 6.0
+            },
+            {
+              "id": "DBLP_conf_pldi_Solar-LezamaRBE05_page_1",
+              "paper": "DBLP_conf_pldi_Solar-LezamaRBE05.pdf",
+              "pdf_position": 1,
+              "keyword_score": 7.0
+            },
+            {
+              "id": "DBLP_conf_cav_BraggFRS21_page_820",
+              "paper": "DBLP_conf_cav_BraggFRS21.pdf",
+              "pdf_position": 820,
+              "keyword_score": 9.0
+            },
+            {
+              "id": "DBLP_conf_icml_NyeHTS19_page_1",
+              "paper": "DBLP_conf_icml_NyeHTS19.pdf",
+              "pdf_position": 1,
+              "keyword_score": 9.0
+            }
+          ],
+          "answer": "The papers give several benefits of automatically inferred or generated sketches, along with some limitations.\n\n## Benefits\n\n- **They can reduce programmer burden.** In Sketcham, the authors say the approach “frees the Sketch user from needing to write models, because we create mocks automatically from normal sketches” and derives specifications “from the input program’s assertions, without requiring the programmer to add annotations” [DBLP_conf_cav_BraggFRS21_page_845].\n\n- **They can improve productivity and robustness.** The original sketching paper says sketches are “easier to write compared to a complete implementation,” let programmers focus on “algorithmic properties rather than on orchestrating low-level details,” and allow a sketch-aware compiler to reject “buggy” sketches, improving reliability [DBLP_conf_pldi_Solar-LezamaRBE05_page_1].\n\n- **They can support synthesis from human-friendly specifications.** The sketch-learning paper says the goal is to build systems that write code automatically from specifications “humans can most easily provide, such as examples and natural language instruction,” and that a flexible combination of pattern recognition and explicit reasoning can solve these programming problems [DBLP_conf_icml_NyeHTS19_page_1].\n\n- **They can enable modular or more structured synthesis.** Sketcham says it “break[s] apart input sketches from the top down, at function level granularity” [DBLP_conf_cav_BraggFRS21_page_845]. The complexity-synthesis paper also reports that their approach can synthesize programs with asymptotic bounds such as “O(na logb n + c)” [DBLP_conf_cav_BraggFRS21_page_822].\n\n## Limitations\n\n- **Automatically inferring sketches does not remove all hard reasoning.** The learning-to-infer-sketches paper says that for unfamiliar tasks, a programmer may still need to “reason about how to write” missing parts such as a lambda function [DBLP_conf_icml_NyeHTS19_page_1]. More broadly, the paper emphasizes that the system combines pattern recognition with symbolic search rather than eliminating reasoning altogether [DBLP_conf_icml_NyeHTS19_page_1].\n\n- **Some approaches are limited in expressiveness or scope.** In the complexity-synthesis paper, SynPlexity notes that reasoning compositionally with big-O is “challenging,” so the type system must “sacrifice precision and generality in some places” [DBLP_conf_cav_BraggFRS21_page_822]. It also says ReSyn is “restricted to linear bounds,” whereas their own system can handle more general forms [DBLP_conf_cav_BraggFRS21_page_822].\n\n- **Some tools still need extra human input.** The complexity paper says ReSyn “requires the user to provide type annotations on terms” [DBLP_conf_cav_BraggFRS21_page_822]. For SynPlexity benchmarks, the authors also report that they had to “manually add resource usages and resource bounds” to encode problems [DBLP_conf_cav_BraggFRS21_page_820].\n\n- **Some generated sketch-like specifications are not enough by themselves to guarantee best efficiency.** The comparison section says Synquid may return a program that is not optimal; for example, on one benchmark it found an O(|xs|^2) solution while SynPlexity and ReSyn synthesized O(|xs|) [DBLP_conf_cav_BraggFRS21_page_820].\n\nOverall, the evidence suggests that automatically inferred sketches can substantially lower annotation burden and support scalable synthesis, but they do not eliminate the need for reasoning, and their effectiveness can be limited by expressiveness, required annotations, or precision of the underlying synthesis framework [DBLP_conf_cav_BraggFRS21_page_845] [DBLP_conf_cav_BraggFRS21_page_822] [DBLP_conf_cav_BraggFRS21_page_820] [DBLP_conf_icml_NyeHTS19_page_1].",
+          "verdict": "fail",
+          "source_support": {
+            "verdict": "fail",
+            "reason": "Missing citation or citation not in retrieved pages."
+          }
+        }
+      }
+    }
+  ]
+}

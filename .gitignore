@@ -1,0 +1,35 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Local corpora and generated retrieval state
+data/research_papers/*.pdf
+.cache/
+outputs/
+chroma_db/
+**/chroma_db/
+**/*_cache.json
+**/*_cache.json.gz
+**/*_embeddings.json
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Microsoft Office temporary files
+~$*
+*.tmp

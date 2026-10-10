@@ -1,0 +1,116 @@
+{
+  "timestamp": "2026-09-24T00:31:11",
+  "cases": [
+    {
+      "question": "What evidence does Learning to Infer Program Sketches provide about the benefits and limitations of automatically inferred sketches?",
+      "grading_notes": "Uses evidence from Learning to Infer Program Sketches and includes at least one reported benefit, such as improved out-of-sample generalization or flexible neural-symbolic search, and at least one limitation or trade-off, such as dependence on training data, search budget, or task domain.",
+      "results": [
+        {
+          "question": "What evidence does Learning to Infer Program Sketches provide about the benefits and limitations of automatically inferred sketches?",
+          "policy": "baseline",
+          "answer": "The document says that automatically inferred sketches can be beneficial because they let the system “dynamically incorporate pattern recognition and reasoning,” and that the model “learns to ﬁnd good intermediates between pattern recognition and symbolic reasoning components,” with performance that “outperforms existing models on several programming tasks” [DBLP_conf_icml_NyeHTS19_page_1].\n\nIt also implies a limitation: for less familiar tasks, a programmer “might recognize the need for filter, but would need to reason about how to write a lambda function,” which shows that automatically inferred sketches may still leave some parts unresolved and require explicit reasoning [DBLP_conf_icml_NyeHTS19_page_1].\n\nSo the evidence is:\n- Benefit: inferred sketches can capture useful intermediate structure between pattern recognition and full symbolic search [DBLP_conf_icml_NyeHTS19_page_1].\n- Benefit: they can improve performance over existing models on programming tasks [DBLP_conf_icml_NyeHTS19_page_1].\n- Limitation: they do not eliminate the need for reasoning about unfamiliar or harder parts of the program [DBLP_conf_icml_NyeHTS19_page_1].\n\n",
+          "pages": [
+            "DBLP_conf_cikm_CheungSM12_page_2",
+            "DBLP_conf_icml_NyeHTS19_page_1",
+            "DBLP_conf_icml_TavaresK0DS21_page_1",
+            "DBLP_journals_corr_abs-1208-2925_page_2",
+            "DBLP_journals_corr_abs-1902-06349_page_1"
+          ],
+          "steps": [],
+          "elapsed_seconds": 2.54,
+          "answer_verdict": "fail",
+          "source_verdict": "pass",
+          "source_reason": "The answer’s substantive claims are supported by the cited page: the paper describes dynamic integration of pattern recognition and explicit reasoning, learning good intermediates, outperforming existing models, and needing reasoning for less familiar tasks."
+        },
+        {
+          "question": "What evidence does Learning to Infer Program Sketches provide about the benefits and limitations of automatically inferred sketches?",
+          "policy": "initial",
+          "answer": "The paper presents evidence that automatically inferred sketches can be beneficial because they let the system “learn how much to rely on each component” of a neuro-symbolic synthesizer, producing sketches that range from very concrete to very general depending on task difficulty and search budget [DBLP_journals_corr_abs-1902-06349_page_3]. It says this “allows the system to perform well with various enumeration budgets and levels of problem difficulty,” with easy problems solved using “very concrete” sketches and difficult problems handled by more general sketches that leave more work to symbolic search [DBLP_journals_corr_abs-1902-06349_page_3].\n\nThe paper also claims that, without explicit supervision, the model learns “good intermediates” between neural and synthesis components, which “increase[s] data efficiency and generalize[s] better to out-of-sample test tasks compared to RNN-based models” [DBLP_journals_corr_abs-1902-06349_page_2]. It further states that the system “achieve[s] state-of-the-art performance on the AlgoLisp English-to-code test dataset” and validates the approach in list processing and string transformation domains [DBLP_journals_corr_abs-1902-06349_page_2].\n\nAs for limitations, the paper emphasizes that previous systems with fixed sketch grammars could not adaptively choose more detailed or more general sketches, which is the limitation its method is designed to overcome [DBLP_journals_corr_abs-1902-06349_page_2]. It also suggests that when a program is “unfamiliar or difficult,” the sketches become “very general,” meaning more computation must be done by the synthesizer rather than the neural model [DBLP_journals_corr_abs-1902-06349_page_3]. The documents provided do not give a separate explicit failure analysis of automatically inferred sketches beyond this trade-off.",
+          "pages": [
+            "DBLP_journals_corr_abs-1902-06349_page_3",
+            "DBLP_journals_corr_abs-1902-06349_page_15",
+            "DBLP_journals_corr_abs-1902-06349_page_5",
+            "DBLP_journals_corr_abs-1902-06349_page_2",
+            "DBLP_journals_corr_EllisRST17_page_11"
+          ],
+          "steps": [
+            {
+              "iteration": 1,
+              "action": "hybrid_search",
+              "query": "\"Learning to Infer Program Sketches\" evidence benefits limitations automatically inferred sketches",
+              "reasoning": "The question asks for evidence and implications from a specific paper but does not quote a passage; hybrid search should locate the paper and relevant discussion of results, benefits, and limitations.",
+              "added_pages": [
+                "DBLP_journals_corr_abs-1902-06349_page_3",
+                "DBLP_journals_corr_abs-1902-06349_page_15",
+                "DBLP_journals_corr_abs-1902-06349_page_5",
+                "DBLP_journals_corr_abs-1902-06349_page_2",
+                "DBLP_journals_corr_EllisRST17_page_11"
+              ]
+            },
+            {
+              "iteration": 2,
+              "action": "answer",
+              "query": "What evidence does Learning to Infer Program Sketches provide about the benefits and limitations of automatically inferred sketches?",
+              "reasoning": "The collected pages already state the paper’s main evidence: automatically inferring sketches lets the system flexibly choose the right abstraction level, using fuller sketches for easy/familiar tasks to reduce search and using more general sketches for hard tasks to rely on symbolic synthesis. They also note a limitation of prior fixed sketches, and the paper’s own approach depends on a learned generator plus search, with the sketch search cost still central to training and inference.",
+              "added_pages": []
+            }
+          ],
+          "elapsed_seconds": 6.1,
+          "answer_verdict": "pass",
+          "source_verdict": "fail",
+          "source_reason": "The answer includes several uncited or unsupported factual claims, including state-of-the-art performance and specific domain validation details that are not supported by the cited pages. It also attributes a limitation to the paper (“previous systems with fixed sketch grammars”) without sufficient exact support for the broader claim as stated."
+        },
+        {
+          "question": "What evidence does Learning to Infer Program Sketches provide about the benefits and limitations of automatically inferred sketches?",
+          "policy": "refined",
+          "answer": "**Benefits of automatically inferred sketches**\n\n- The paper says the system can “**learn good intermediates between neural network and synthesis components**” without direct supervision, letting it “**dynamically incorporate pattern recognition and reasoning**” to solve programming tasks from examples or natural language ([DBLP_conf_icml_NyeHTS19_page_1], [DBLP_conf_icml_NyeHTS19_page_2]).\n- It reports that the model “**matches the memorization and generalization performance of neural synthesis and symbolic search, respectively**,” and “**achieves state-of-the-art performance**” on the AlgoLisp English-to-code dataset ([DBLP_conf_icml_NyeHTS19_page_1], [DBLP_conf_icml_NyeHTS19_page_2]).\n- The paper explicitly argues that inferred sketches help the system “**learn how much to rely on each component of the system**,” outputting “**very specific**” sketches for easy problems and “**more general**” sketches for difficult ones ([DBLP_conf_icml_NyeHTS19_page_3], [DBLP_conf_icml_NyeHTS19_page_5]).\n- In experiments, SKETCHADAPT is reported to “**perform well on both within-sample and out-of-sample tasks**” in list processing, and to “**outperform**” the synthesizer-only model and “**match or exceed**” the generator-only RNN on string editing ([DBLP_conf_icml_NyeHTS19_page_6], [DBLP_conf_icml_NyeHTS19_page_7]).\n- The paper also says the approach improves “**data efficiency**” and “**generalize[s] better to out-of-sample test tasks compared to RNN-based models**” ([DBLP_conf_icml_NyeHTS19_page_2]).\n\n**Limitations / evidence of limitations**\n\n- The paper does **not** state a general theoretical limitation of automatically inferred sketches, but it does report practical dependence on search budget and problem difficulty. It says that “**diffi[cult] or out-of-sample problems**” require the system to “**spend more time filling in the sketch with search techniques**” ([DBLP_conf_icml_NyeHTS19_page_2]).\n- It also says that the system “**quickly solves ‘easy’ problems with very ‘concrete’ sketches, but also samples more general sketches, which can be used to solve difficult problems for which the system’s learned inductive biases are less appropriate**” ([DBLP_conf_icml_NyeHTS19_page_3]). This is evidence that when learned patterns are not a good fit, the sketch must remain less specific and rely more on symbolic search.\n- The paper notes that evaluation performance depends on the enumerative budget in general, though it claims SKETCHADAPT is “**less dependent on beam size**” than the generator-only model ([DBLP_conf_icml_NyeHTS19_page_7]). This is a practical limitation of the overall system, not a claim that inferred sketches themselves are ineffective.\n- The pages provided do **not** establish a direct limitation such as “automatically inferred sketches fail on X” or “cannot handle Y”; that evidence is missing in the provided text.",
+          "pages": [
+            "DBLP_conf_icml_NyeHTS19_page_1",
+            "DBLP_conf_icml_NyeHTS19_page_3",
+            "DBLP_conf_icml_NyeHTS19_page_5",
+            "DBLP_conf_icml_NyeHTS19_page_6",
+            "DBLP_conf_icml_NyeHTS19_page_7",
+            "DBLP_conf_icml_NyeHTS19_page_2",
+            "DBLP_conf_icml_NyeHTS19_page_4"
+          ],
+          "steps": [
+            {
+              "iteration": 1,
+              "action": "title_search",
+              "query": "Learning to Infer Program Sketches benefits limitations automatically inferred sketches",
+              "reasoning": "Need direct evidence from the named paper itself about both the benefits and limitations of automatically inferred sketches.",
+              "added_pages": [
+                "DBLP_conf_icml_NyeHTS19_page_1",
+                "DBLP_conf_icml_NyeHTS19_page_3",
+                "DBLP_conf_icml_NyeHTS19_page_5"
+              ]
+            },
+            {
+              "iteration": 2,
+              "action": "expand_pages",
+              "query": "Learning to Infer Program Sketches results limitations benefits evaluation discussion ablation sketch size synthesis performance failure cases",
+              "reasoning": "We have the paper and methods, but not the evaluation/discussion pages needed to directly support benefits and limitations of automatically inferred sketches.",
+              "added_pages": [
+                "DBLP_conf_icml_NyeHTS19_page_6",
+                "DBLP_conf_icml_NyeHTS19_page_7",
+                "DBLP_conf_icml_NyeHTS19_page_2",
+                "DBLP_conf_icml_NyeHTS19_page_4"
+              ]
+            },
+            {
+              "iteration": 3,
+              "action": "answer",
+              "query": "Learning to Infer Program Sketches benefits limitations automatically inferred sketches evidence results discussion",
+              "reasoning": "The paper pages already include direct evidence on benefits in the abstract, intro, and experiments, but there is no clearly retrieved discussion of limitations or failure cases for automatically inferred sketches beyond the need for a timeout/exponential training approximation. I can answer the supported benefits and note the limited evidence on limitations.",
+              "added_pages": []
+            }
+          ],
+          "elapsed_seconds": 7.86,
+          "answer_verdict": "pass",
+          "source_verdict": "pass",
+          "source_reason": "The answer’s substantive claims are supported by the cited pages from the named paper, and it distinguishes benefits from practical limitations without attributing unsupported limitations to the method."
+        }
+      ]
+    }
+  ]
+}

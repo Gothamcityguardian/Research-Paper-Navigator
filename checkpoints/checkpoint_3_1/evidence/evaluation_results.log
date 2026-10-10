@@ -1,0 +1,112 @@
+[2026-09-16T00:50:33] Q1: What role does the programmer play in the sketching approach to program synthesis?
+grading_notes=Explains that the programmer supplies a partial program or sketch that constrains the implementation, while the synthesizer fills in the missing details or holes.
+retrieved:
+DBLP_conf_cav_BraggFRS21.pdf | PDF position 135 | score=10.0
+DBLP_conf_cav_BraggFRS21.pdf | PDF position 845 | score=10.0
+DBLP_conf_iclr_OlaussonIW0S24.pdf | PDF position 9 | score=10.0
+DBLP_conf_pldi_Solar-LezamaRBE05.pdf | PDF position 8 | score=10.0
+DBLP_conf_cav_BraggFRS21.pdf | PDF position 150 | score=9.0
+verdict=pass
+answer=In the sketching approach, the programmer does **not** write the full implementation. Instead, they provide a **sketch** that constrains the shape of the program, and the compiler fills in the missing details.
+
+The document says that a complete sketch is “**a StreamIt program P that implements some permutation f**,” and that “**the programmer actually writes the simpler proper sketch**” while the compiler resolves it. It also says sketches are “**express[ed] as rewrite rules**” and that the sketch “**looks just like a program**” to the programmer.
+
+So, the programmer’s role is to:
+- write a partial or complete sketch,
+- indicate the intended structure of the implementation,
+- and let the sketching compiler synthesize the remaining details.
+
+As the text puts it, the programmer “**control[s] the compiler (with a sketch)**” rather than constructing the full program themselves.
+------------------------------------------------------------------------
+[2026-09-16T00:50:37] Q2: What is program synthesis, and how does the sketching approach change how a program is created?
+grading_notes=Defines program synthesis as automatically producing a program from a specification or constraints, and explains that sketching lets a programmer provide a partial template that the synthesizer completes.
+retrieved:
+DBLP_conf_pldi_Solar-LezamaRBE05.pdf | PDF position 8 | score=12.0
+DBLP_conf_cikm_CheungSM12.pdf | PDF position 5 | score=11.0
+DBLP_conf_pldi_Solar-LezamaRBE05.pdf | PDF position 2 | score=11.0
+DBLP_journals_corr_abs-1208-2925.pdf | PDF position 5 | score=11.0
+DBLP_journals_corr_abs-1802-04408.pdf | PDF position 4 | score=11.0
+verdict=pass
+answer=Program synthesis is the process of automatically generating a program from a specification or constraints. In the documents, it is described as the compiler or synthesizer deriving an implementation so that it is “functionally identical to the reference program” or finding σ such that the asserted conditions hold.
+
+The sketching approach changes program creation by letting the programmer provide only a partial implementation template, and the compiler fills in the missing details. As the document says, “the goal of sketching is to provide only a loosely constrained template of the implementation, with the compiler ﬁlling in the missing details.” It also says, “a complete sketch is a StreamIt program P that implements some permutation f,” and when a leaf filter is encountered, “the ﬁlter is not decomposed using the base rewrite rules; instead, it is replaced with the program P.”
+
+So, instead of writing the whole program manually, the programmer writes a sketch of the desired structure, and synthesis resolves the missing parts automatically.
+------------------------------------------------------------------------
+[2026-09-16T00:50:41] Q3: How do The Sketching Approach to Program Synthesis and Learning to Infer Program Sketches differ in how program sketches are produced?
+grading_notes=States that the sketching approach uses a human-written sketch, while Learning to Infer Program Sketches uses a learned neural sketch generator to produce sketches from specifications before symbolic search.
+retrieved:
+DBLP_conf_icml_NyeHTS19.pdf | PDF position 2 | score=13.0
+DBLP_conf_icml_NyeHTS19.pdf | PDF position 3 | score=13.0
+DBLP_conf_nips_EllisRST18.pdf | PDF position 9 | score=13.0
+DBLP_conf_nips_EllisST15.pdf | PDF position 2 | score=13.0
+DBLP_conf_pldi_Solar-LezamaRBE05.pdf | PDF position 8 | score=13.0
+verdict=pass
+answer=The documents describe different ways sketches are produced:
+
+- In **The Sketching Approach to Program Synthesis**, sketches are **provided manually by the programmer**. The paper says, “*we view the synthesis … as a process …*” and that “*the programmer will control the compiler (with a sketch)*,” and “*a complete sketch is a StreamIt program P*” that serves as a sketch. It also explicitly says “*we will then explain how proper sketches, those which do omit details, can be resolved*,” showing the sketch starts as a human-written program structure.
+
+- In **Learning to Infer Program Sketches**, sketches are **produced by a learned neural network**. The paper says, “*our approach allows this division of labor to be learned, without additional supervision*,” and defines “*The sketch generator is a distribution over program sketches given the spec: qφ(sketch|X)*.” It further says the model is trained “*to output sketches which would be suitable for a wide distribution of evaluation budgets*.”
+
+So, the key difference is: **manual, programmer-supplied sketches in the sketching compiler paper versus learned, spec-conditioned sketches generated automatically by a neural model in Learning to Infer Program Sketches.**
+------------------------------------------------------------------------
+[2026-09-16T00:50:44] Q4: Which method lets a developer provide an incomplete program that an automated system completes under constraints?
+grading_notes=Identifies sketch-based program synthesis and explains that a partial program or sketch contains missing parts that are completed subject to a specification or constraints.
+retrieved:
+DBLP_conf_oopsla_PuNSB16.pdf | PDF position 11 | score=11.0
+DBLP_journals_corr_PuNSB16.pdf | PDF position 11 | score=11.0
+DBLP_conf_plas_AustinYFS13.pdf | PDF position 9 | score=10.0
+DBLP_conf_sigsoft_JeonQFS15.pdf | PDF position 1 | score=10.0
+DBLP_conf_tacas_InalaPQLS17.pdf | PDF position 113 | score=10.0
+verdict=pass
+answer=The method is **sketch-based synthesis**.
+
+The JSKETCH paper says it “**lets developers synthesize software starting from a partial program, also called a sketch or template**” and that the input is “**a partial Java program that may include holes**.” It also says the system translates the synthesis problem into SKETCH and synthesizes a program from it.
+------------------------------------------------------------------------
+[2026-09-16T00:50:50] Q5: What evidence do the papers provide about the benefits and limitations of automatically inferred program sketches?
+grading_notes=Uses evidence from Learning to Infer Program Sketches and includes at least one reported benefit, such as improved out-of-sample generalization or flexible neural-symbolic search, and at least one limitation or trade-off, such as dependence on training data, search budget, or task domain.
+retrieved:
+DBLP_conf_icml_GuJLSESS25.pdf | PDF position 9 | score=10.0
+DBLP_conf_icml_TavaresK0DS21.pdf | PDF position 1 | score=10.0
+DBLP_conf_icml_TavaresK0DS21.pdf | PDF position 9 | score=10.0
+DBLP_conf_cav_BraggFRS21.pdf | PDF position 820 | score=9.0
+DBLP_conf_cikm_CheungSM12.pdf | PDF position 2 | score=9.0
+verdict=fail
+answer=The documents provide mixed evidence: automatically inferred program sketches can be very useful, but they also have clear limits.
+
+### Benefits
+From the LifeJoin paper, automatically inferred predicates/program sketches are valuable because they can be:
+
+- **Decomposable and human-understandable**:  
+  The authors say they want the system to produce an interest function “in the form of a predicate” because that “helps ensure the decomposability” and makes it “comprehensible by users.”
+- **Useful for downstream tasks**:  
+  Such expressions “can be easily manipulated and decomposed into predicates that can be pushed down to individual users’ phones to optimize the data acquisition process.”
+- **Found efficiently with synthesis techniques**:  
+  The paper says combinatorial synthesis “can find a matching interest function in this space in a few seconds.”
+
+The CAV paper also suggests a similar benefit of synthesis-like tools: they can help generate programs under constraints, and in some benchmarks the synthesizer can find solutions, sometimes more efficient ones than competing tools. For example, Synquid found a solution with worse resource usage, while other tools found a more efficient one.
+
+### Limitations
+The documents also show important limitations:
+
+- **Poor generalization**:  
+  The LifeJoin paper explicitly says the naïvely synthesized predicates “cannot be expected to have much generalization power,” meaning they are unlikely to classify unseen data well.
+- **Not enough on their own for optimal decision-making**:  
+  Those predicates “will also not be of much use in optimally determining the next data element to present to the user.”
+- **Search space can be enormous**:  
+  The paper notes the space of possible predicates is “enormous—on the order of 10^40 in some of our experiments.”
+- **Need hybrid methods**:  
+  Because of these limits, the authors combine synthesis with boosting/SVM rather than relying on synthesis alone.
+- **Some tools cannot handle certain resource bounds or problems**:  
+  In the SynPlexity comparison, ReSyn “does not support non-linear resources bounds,” and Synquid “cannot provide any guarantees about the resource usage” of its output. Also, some benchmarks were not encodable or solvable by all tools.
+
+### Overall
+So, the evidence suggests that automatically inferred program sketches are promising because they can produce **interpretable, decomposable, and efficiently discoverable models**, but they are limited by **poor generalization, huge search spaces, and incomplete tool support**, which is why hybrid approaches are often needed.
+------------------------------------------------------------------------
+[2026-09-16T00:50:52] FRAMEWORK VALIDATION
+grading_notes=Identifies sketch-based program synthesis and explains that the programmer provides a partial program with holes that the synthesizer completes under a specification or constraints.
+correct_answer=Sketch-based program synthesis lets the programmer provide a partial program with holes. The synthesizer fills those holes while satisfying the supplied specification or constraints.
+correct_verdict=pass
+manipulated_answer=Sketch-based synthesis requires the programmer to write the complete final program, and the automated system only checks spelling and formatting.
+manipulated_verdict=fail
+------------------------------------------------------------------------
