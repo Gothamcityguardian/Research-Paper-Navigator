@@ -46,6 +46,27 @@ docs/presentation/              Design-review presentation and preparation notes
 Model calls and embeddings use OpenRouter and may incur charges. PDF extraction,
 BM25 indexing, metadata handling, and caches run locally.
 
+## Reviewer quick start
+
+The research-paper PDFs are not included because the course corpus may be
+copyrighted. They are data inputs rather than source-code dependencies.
+
+To reproduce the reported capstone examples, use the course-provided
+`ResearchPapers` folder. To test the software with a different corpus, use any
+local folder containing readable PDF files and ask questions relevant to those
+documents. Either copy the PDFs into `data/research_papers/` or set
+`RAG_PAPERS_DIR` in `.env` to their existing location.
+
+A live answer requires both a PDF folder and an `OPENROUTER_API_KEY`. Retrieved
+passages are sent to the configured OpenRouter models for embeddings and answer
+generation, so reviewers should use documents they are permitted to process
+through that service. The PDFs themselves, extracted-page cache, and retrieval
+indexes remain untracked local files.
+
+The checked-in `evidence/` directory and checkpoint evidence can be reviewed
+without an API key or the source PDFs. They contain representative outputs,
+measurements, and security-test results from the capstone runs.
+
 ## Installation
 
 From PowerShell:
